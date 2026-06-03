@@ -1,0 +1,36 @@
+---
+description: General coding standards and project discipline for {{ project_name }}
+alwaysApply: true
+---
+
+# General Standards — {{ project_name }}
+
+## Stack
+- **Language**: {{ language }}
+- **Framework**: {{ framework }}
+- **Backend**: {{ backend }}
+- **Testing**: {{ testing }}
+- **Deploy**: {{ deploy }}
+
+## Development principles
+- Keep changes minimal and focused — match existing patterns in the repo
+- Meaningful names; no mystery abbreviations
+- Ask when requirements are ambiguous; do not guess and patch
+- No secrets in code — use environment variables
+- Comments only for non-obvious business logic
+
+## Git & commits
+- Commit style: {{ team.conventions.commit_style if team.get('conventions') else '[scope] short description' }}
+- Small, logical commits; verify with diff before declaring done
+- Prefer PRs under {{ team.conventions.pr_max_loc if team.get('conventions') else 400 }} LOC when possible
+
+## Agent behavior
+- Plan before large features (use Plan mode or a short design note)
+- Clear context when switching unrelated tasks
+- Run tests and lint before marking work complete
+- Visual QA in the browser for UI changes when applicable
+
+## Commands (from brief)
+{% for name, cmd in commands.items() -%}
+- `{{ name }}`: `{{ cmd }}`
+{% endfor %}

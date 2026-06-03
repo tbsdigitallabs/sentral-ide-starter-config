@@ -1,0 +1,30 @@
+---
+description: API and data layer patterns for {{ project_name }}
+globs:
+  - "src/**/api/**"
+  - "app/api/**"
+  - "src/**/*service*"
+  - "src/**/*repository*"
+alwaysApply: false
+---
+
+# API rules — {{ project_name }}
+
+## Design
+- Validate inputs at the boundary; fail with clear errors
+- Never trust client-provided IDs, roles, or amounts for authorization
+- Keep handlers thin — business logic in services
+
+## Security
+- Auth check before sensitive reads/writes
+- Rate-limit or guard public endpoints where appropriate
+- Log errors without leaking secrets or PII
+
+## Backend: {{ backend }}
+- Document env vars in `.env.example`
+- Use migrations for schema changes
+- Test happy path and common failure modes
+
+## Verification
+- Run `{{ commands.test }}` after API changes
+- Add or update tests for new endpoints and edge cases

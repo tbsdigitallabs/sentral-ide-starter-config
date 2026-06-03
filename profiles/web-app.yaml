@@ -1,0 +1,45 @@
+project:
+  name: "{{PROJECT_NAME}}"
+  description: Web application with authenticated UI and API routes.
+  profile: web-app
+
+stack:
+  language: TypeScript
+  framework: Next.js 15
+  styling: Tailwind CSS
+  backend: Supabase
+  database: PostgreSQL
+  auth: Supabase Auth
+  testing: Vitest
+  deploy: Vercel
+
+ide:
+  targets:
+    - cursor
+    - antigravity
+  mcp:
+    - context7
+    - github
+    - memory
+  skills:
+    - using-skills
+    - product-context
+    - brainstorming
+    - systematic-debugging
+    - verification-before-completion
+    - frontend-polish
+    - copywriting
+  rules:
+    - bootstrap
+    - general
+    - skills-routing
+    - ui
+    - api
+    - testing
+
+commands:
+  install: npm install
+  dev: npm run dev
+  test: npm run test
+  lint: npm run lint
+  build: npm run build

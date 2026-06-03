@@ -1,0 +1,60 @@
+# Copy this file into your project as `brief.yaml`, edit it, then run the scaffold.
+# Example:
+#   python -m scaffold --brief ./brief.yaml --target .
+
+project:
+  name: Acme Portal
+  description: Customer dashboard for managing subscriptions and billing.
+  profile: web-app # web-app | marketing-site | python-api | static-site
+
+stack:
+  language: TypeScript
+  framework: Next.js 15
+  styling: Tailwind CSS
+  backend: Supabase
+  database: PostgreSQL
+  auth: Supabase Auth
+  testing: Vitest
+  deploy: Vercel
+
+team:
+  primary_contact: you@company.com
+  conventions:
+    commit_style: "[scope] short description"
+    pr_max_loc: 400
+    typescript_strict: true
+
+ide:
+  targets:
+    - cursor
+    - antigravity
+  # Optional MCP servers to include (requires API keys in your environment)
+  mcp:
+    - context7
+    - github
+    - memory
+  skills:
+    - using-skills
+    - product-context
+    - brainstorming
+    - systematic-debugging
+    - verification-before-completion
+    - frontend-polish
+    - copywriting
+  rules:
+    - bootstrap
+    - general
+    - skills-routing
+    - ui
+    - api
+    - testing
+
+commands:
+  install: npm install
+  dev: npm run dev
+  test: npm run test
+  lint: npm run lint
+  build: npm run build
+
+notes: |
+  Add project-specific gotchas here. The scaffold copies this block into AGENTS.md.

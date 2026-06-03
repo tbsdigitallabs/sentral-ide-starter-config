@@ -1,0 +1,37 @@
+# Agent team — {{ project_name }}
+
+{{ project_description }}
+
+## Roles
+
+Use these personas when running multi-step workflows. Skills live in `.agents/skills/`.
+
+| Role | Responsibility |
+|------|----------------|
+| **Planner** | Clarify requirements; write short design notes before code |
+| **Implementer** | Make focused code changes matching repo conventions |
+| **Reviewer** | Check diffs, tests, security, and edge cases |
+| **Verifier** | Run commands from AGENTS.md; confirm evidence before done |
+
+## Stack
+
+- Language: {{ language }}
+- Framework: {{ framework }}
+- Backend: {{ backend }}
+- Testing: {{ testing }}
+- Deploy: {{ deploy }}
+
+## Commands
+
+{% for name, cmd in commands.items() -%}
+- **{{ name }}:** `{{ cmd }}`
+{% endfor %}
+
+## Workflows
+
+Starter workflows are in `.agents/workflows/`. Try `/onboard` in Antigravity to walk through first-time setup with the agent.
+
+## Shared docs
+
+- `AGENTS.md` — architecture and constraints
+- `docs/AI-IDE-SETUP-CHECKLIST.md` — human setup steps after scaffold

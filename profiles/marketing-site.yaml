@@ -1,0 +1,44 @@
+project:
+  name: "{{PROJECT_NAME}}"
+  description: Marketing site focused on conversion, SEO, and content.
+  profile: marketing-site
+
+stack:
+  language: TypeScript
+  framework: Next.js 15
+  styling: Tailwind CSS
+  backend: none
+  database: none
+  auth: none
+  testing: Vitest
+  deploy: Vercel
+
+ide:
+  targets:
+    - cursor
+    - antigravity
+  mcp:
+    - context7
+    - memory
+  skills:
+    - using-skills
+    - product-context
+    - brainstorming
+    - verification-before-completion
+    - frontend-polish
+    - copywriting
+    - seo-audit
+  rules:
+    - bootstrap
+    - general
+    - skills-routing
+    - ui
+    - seo
+    - perf
+
+commands:
+  install: npm install
+  dev: npm run dev
+  test: npm run test
+  lint: npm run lint
+  build: npm run build

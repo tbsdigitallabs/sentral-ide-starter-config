@@ -1,0 +1,21 @@
+---
+description: Performance budgets and checks for {{ project_name }}
+alwaysApply: false
+---
+
+# Performance — {{ project_name }}
+
+## Budgets (adjust per project)
+- LCP < 2.5s on key pages
+- CLS < 0.1
+- INP < 200ms
+
+## Practices
+- Lazy-load heavy client components
+- Optimize images; avoid layout shift
+- Avoid unnecessary re-renders and N+1 API calls
+- Measure before optimizing — profile, do not guess
+
+## Before release
+- Run production build: `{{ commands.build }}`
+- Smoke-test critical flows on throttled network if possible

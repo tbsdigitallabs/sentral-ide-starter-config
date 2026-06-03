@@ -1,0 +1,42 @@
+project:
+  name: "{{PROJECT_NAME}}"
+  description: Python API service with tests and deployment automation.
+  profile: python-api
+
+stack:
+  language: Python
+  framework: FastAPI
+  styling: n/a
+  backend: custom
+  database: PostgreSQL
+  auth: JWT
+  testing: pytest
+  deploy: Docker
+
+ide:
+  targets:
+    - cursor
+    - antigravity
+  mcp:
+    - context7
+    - github
+    - memory
+  skills:
+    - using-skills
+    - product-context
+    - brainstorming
+    - systematic-debugging
+    - verification-before-completion
+  rules:
+    - bootstrap
+    - general
+    - skills-routing
+    - api
+    - testing
+
+commands:
+  install: pip install -e ".[dev]"
+  dev: uvicorn app.main:app --reload
+  test: pytest
+  lint: ruff check .
+  build: docker build -t app .

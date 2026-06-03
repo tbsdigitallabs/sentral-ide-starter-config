@@ -1,0 +1,63 @@
+# Project: {{ project_name }}
+
+{{ project_description }}
+
+## Architecture
+
+### Stack
+| Layer | Choice |
+|-------|--------|
+| Language | {{ language }} |
+| Framework | {{ framework }} |
+| Styling | {{ stack.styling }} |
+| Backend | {{ backend }} |
+| Database | {{ stack.database }} |
+| Auth | {{ stack.auth }} |
+| Testing | {{ testing }} |
+| Deploy | {{ deploy }} |
+
+---
+
+## Agent configuration
+
+### Session hygiene
+- Use Plan mode before large or ambiguous features
+- Clear context when switching unrelated tasks
+- Prefer small, verifiable diffs over big-bang changes
+
+### Skills
+Project skills are in:
+- **Cursor:** `.cursor/skills/`
+- **Antigravity:** `.agents/skills/`
+
+Read `skills-routing` guidance before stacking multiple skills.
+
+### MCP servers
+Configured in `.cursor/mcp.json` when scaffolded. Add API keys via environment variables — never commit secrets.
+
+---
+
+## Commands
+
+```bash
+{% for name, cmd in commands.items() -%}
+# {{ name }}
+{{ cmd }}
+{% endfor %}
+```
+
+---
+
+## Project notes
+
+{% if notes %}
+{{ notes }}
+{% else %}
+Add gotchas, integration quirks, and runbook notes here after scaffold.
+{% endif %}
+
+---
+
+## Setup checklist
+
+See [docs/AI-IDE-SETUP-CHECKLIST.md](docs/AI-IDE-SETUP-CHECKLIST.md) for post-scaffold steps.

@@ -1,0 +1,28 @@
+{
+  "allowedDomains": [
+    "localhost:*",
+    "127.0.0.1:*",
+    "github.com",
+    "*.github.com",
+    "*.vercel.app",
+    "*.vercel.com"
+  ],
+  "restrictedPaths": [
+    ".env*",
+    ".git",
+    "node_modules",
+    ".next",
+    "build",
+    "dist"
+  ],
+  "allowFileWrites": [
+    "src/**",
+    "app/**",
+    "public/**",
+    "components/**",
+    "tests/**",
+    ".cursor/**",
+    ".agents/**",
+    "docs/**"
+  ]
+}

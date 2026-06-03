@@ -1,0 +1,24 @@
+---
+description: Testing standards for {{ project_name }}
+globs:
+  - "**/*.test.*"
+  - "**/*.spec.*"
+  - "tests/**"
+alwaysApply: false
+---
+
+# Testing — {{ project_name }}
+
+## Runner
+- **Framework**: {{ testing }}
+
+## Principles
+- Test behavior users care about, not implementation trivia
+- One assertion theme per test; descriptive names
+- Prefer fixtures/factories over copy-pasted setup
+- Do not add tests that only restate the obvious
+
+## Before merge
+- `{{ commands.test }}` passes
+- New features include coverage for critical paths
+- Flaky tests get fixed or quarantined — not ignored

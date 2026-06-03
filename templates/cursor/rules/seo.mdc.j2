@@ -1,0 +1,27 @@
+---
+description: SEO and metadata patterns for {{ project_name }}
+globs:
+  - "app/**"
+  - "src/pages/**"
+  - "content/**"
+alwaysApply: false
+---
+
+# SEO — {{ project_name }}
+
+## On-page
+- Unique title and meta description per public page
+- One clear H1; logical heading hierarchy
+- Descriptive alt text on meaningful images
+
+## Technical
+- Canonical URLs where duplicates exist
+- Sitemap and robots.txt for production
+- Core Web Vitals: monitor LCP, CLS, INP
+
+## Content
+- Write for humans first; keywords should read naturally
+- Internal links between related pages
+- Use structured data when it matches real page content
+
+Run the `seo-audit` skill for substantive SEO reviews.

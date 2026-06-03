@@ -1,0 +1,31 @@
+---
+description: UI and component patterns for {{ project_name }}
+globs:
+  - "src/**/*.tsx"
+  - "src/**/*.jsx"
+  - "app/**/*.tsx"
+  - "components/**/*.tsx"
+alwaysApply: false
+---
+
+# UI rules — {{ project_name }}
+
+## Architecture
+- One component, one job; colocate related logic
+- Server/client split: `'use client'` only when interactivity requires it
+- Prefer existing design tokens and component primitives
+
+## Styling
+- Use {{ stack.styling }} consistently — no ad-hoc inline styles
+- Mobile-first responsive layouts
+- Every interactive element needs hover, focus, disabled, and loading states
+
+## Accessibility
+- Semantic HTML first; ARIA only when needed
+- Visible focus rings; keyboard navigation must work
+- WCAG AA contrast minimum for text
+
+## Before shipping UI
+- Check layout at mobile and desktop widths
+- Confirm no new console errors
+- Run `{{ commands.lint }}` if configured
