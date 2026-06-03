@@ -1,23 +1,23 @@
 # Agent IDE Starter
 
-Scaffold **Cursor** and **Google Antigravity** project configuration from a single brief file — rules, skills, MCP servers, and a human setup checklist.
+Scaffold AI agent IDE project configuration from a single brief file — skills, rules, MCP servers, and a human setup checklist.
 
-Modeled on a production agent-IDE workflow (skills routing, bootstrap rules, verification gates) without vendor-specific branding.
+Works with editors that use the **rules layout** (`.cursor/`) or the **agents layout** (`.agents/`).
 
 ## Who this is for
 
-Clients or teams starting with an AI-native IDE who want:
+Clients or teams adopting an AI-native editor who want:
 
 - A repeatable project setup they can clone and run
 - Agent **skills** that teach good habits (plan → implement → verify)
 - **Rules** for stack-specific conventions
 - Optional **MCP** integrations (GitHub, docs lookup, memory)
-- Support for **both Cursor and Antigravity** from one brief
+- Both common config layouts from one brief
 
 ## Quick start
 
 ```bash
-git clone https://github.com/SLAMx/agent-ide-starter.git
+git clone https://github.com/tbsdigitallabs/agent-ide-starter.git
 cd agent-ide-starter
 python -m venv .venv
 .venv\Scripts\activate          # Windows
@@ -25,7 +25,7 @@ pip install -e .
 
 # In YOUR project:
 cp /path/to/agent-ide-starter/brief.example.yaml ./brief.yaml
-# Edit brief.yaml — name, stack, IDE targets, skills
+# Edit brief.yaml — name, stack, layout targets, skills
 
 python -m scaffold --brief ./brief.yaml --target .
 ```
@@ -40,14 +40,16 @@ scripts\scaffold.bat C:\path\to\brief.yaml C:\path\to\your-project
 bash scripts/scaffold.sh ./brief.yaml ../your-project
 ```
 
+See [`docs/GETTING-STARTED.md`](docs/GETTING-STARTED.md) for the full client handoff walkthrough.
+
 ## What gets generated
 
-| Output | Cursor | Antigravity |
-|--------|--------|-------------|
+| Output | Rules layout (`.cursor/`) | Agents layout (`.agents/`) |
+|--------|----------------------------|----------------------------|
 | Agent instructions | `AGENTS.md` | `.agents/agents.md` |
 | Skills | `.cursor/skills/*/` | `.agents/skills/*/` |
-| Rules | `.cursor/rules/*.mdc` | — (use skills + agents.md) |
-| MCP config | `.cursor/mcp.json` | configure via Gemini MCP separately |
+| Rules | `.cursor/rules/*.mdc` | — (skills + agents.md) |
+| MCP config | `.cursor/mcp.json` | configure in your editor |
 | Setup guide | `docs/AI-IDE-SETUP-CHECKLIST.md` | same |
 | Workflows | — | `.agents/workflows/onboard.md` |
 
@@ -59,11 +61,11 @@ Key sections:
 
 - **project** — name, description, profile (`web-app`, `marketing-site`, `python-api`)
 - **stack** — language, framework, backend, deploy target
-- **ide.targets** — `cursor`, `antigravity`, or both
+- **ide.targets** — `rules`, `agents`, or both (legacy aliases `cursor` / `antigravity` still work)
 - **ide.skills** — which starter skills to copy
-- **ide.rules** — which Cursor rules to generate
+- **ide.rules** — which rule files to generate (rules layout only)
 - **ide.mcp** — optional MCP servers
-- **commands** — install/dev/test/lint/build (rendered into AGENTS.md)
+- **commands** — install/dev/test/lint/build (rendered into `AGENTS.md`)
 
 Profiles in [`profiles/`](profiles/) merge under your brief so clients can start from a template and override only what differs.
 
@@ -72,11 +74,11 @@ Profiles in [`profiles/`](profiles/) merge under your brief so clients can start
 | Skill | Purpose |
 |-------|---------|
 | `using-skills` | How to find and apply project skills |
-| `product-context` | Canonical `.agents/product-marketing-context.md` |
+| `product-context` | Canonical product/audience context doc |
 | `brainstorming` | Design before implementation |
 | `systematic-debugging` | Root-cause debugging workflow |
 | `verification-before-completion` | Evidence before "done" |
-| `frontend-polish` | UI spacing, hierarchy, Tailwind cleanup |
+| `frontend-polish` | UI spacing, hierarchy, styling cleanup |
 | `copywriting` | Marketing copy with context |
 | `seo-audit` | On-page SEO checklist |
 
@@ -84,16 +86,19 @@ Profiles in [`profiles/`](profiles/) merge under your brief so clients can start
 
 1. Clone this repo (or fork for your consultancy)
 2. Copy `brief.example.yaml` into the client project
-3. Fill in stack + pick profile
-4. Run scaffold → open project in Cursor/Antigravity
+3. Fill in stack, profile, and layout targets
+4. Run scaffold → open the project in their editor
 5. Client follows `docs/AI-IDE-SETUP-CHECKLIST.md`
-6. First agent session: run `/onboard` (Antigravity) or ask agent to walk the checklist (Cursor)
+6. First agent session: run `/onboard` (agents layout) or ask the agent to walk the checklist
 
-## Docs
+## Documentation
 
-- [`docs/CURSOR.md`](docs/CURSOR.md) — Cursor-specific notes
-- [`docs/ANTIGRAVITY.md`](docs/ANTIGRAVITY.md) — Antigravity-specific notes
-- [`docs/CUSTOMIZING.md`](docs/CUSTOMIZING.md) — Adding skills, rules, profiles
+| Doc | Description |
+|-----|-------------|
+| [`docs/GETTING-STARTED.md`](docs/GETTING-STARTED.md) | End-to-end setup for new clients |
+| [`docs/RULES-LAYOUT.md`](docs/RULES-LAYOUT.md) | Rules layout (`.cursor/`) — rules, skills, MCP |
+| [`docs/AGENTS-LAYOUT.md`](docs/AGENTS-LAYOUT.md) | Agents layout (`.agents/`) — skills and workflows |
+| [`docs/CUSTOMISING.md`](docs/CUSTOMISING.md) | Adding skills, rules, and profiles |
 
 ## Development
 
@@ -103,6 +108,6 @@ pytest
 python -m scaffold --brief brief.example.yaml --target .scaffold-test --dry-run
 ```
 
-## License
+## Licence
 
 MIT — use freely with clients; attribution appreciated.

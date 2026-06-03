@@ -1,7 +1,7 @@
 [project]
 name = "agent-ide-starter"
 version = "0.1.0"
-description = "Scaffold Cursor and Antigravity skills, rules, and settings from a project brief"
+description = "Scaffold agent IDE skills, rules, and settings from a project brief"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [

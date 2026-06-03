@@ -1,6 +1,6 @@
 ---
 name: brainstorming
-description: Use before creative work — new features, components, behavior changes, or ambiguous requirements. Explore intent and propose a short design before implementation.
+description: Use before creative work — new features, components, behaviour changes, or ambiguous requirements. Explore intent and propose a short design before implementation.
 ---
 
 # Brainstorming

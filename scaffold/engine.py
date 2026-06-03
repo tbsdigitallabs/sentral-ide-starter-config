@@ -9,6 +9,8 @@ from typing import Any
 
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
 
+from scaffold.targets import normalize_targets
+
 MCP_CATALOG: dict[str, dict[str, Any]] = {
     "context7": {
         "command": "npx",
@@ -96,7 +98,8 @@ def scaffold_project(
     created: list[str] = []
     context = build_context(brief)
     ide = brief.get("ide", {})
-    targets = ide.get("targets", ["cursor"])
+    targets = normalize_targets(ide.get("targets"))
+    context["ide"] = {**ide, "targets": targets}
     template_root = repo_root / "templates"
     env = _jinja_env(template_root)
 
@@ -111,16 +114,16 @@ def scaffold_project(
     _write(checklist_path, checklist, dry_run=dry_run)
     created.append(str(checklist_path.relative_to(target)))
 
-    if "cursor" in targets:
-        created.extend(_scaffold_cursor(target, repo_root, env, context, ide, dry_run))
+    if "rules" in targets:
+        created.extend(_scaffold_rules_layout(target, repo_root, env, context, ide, dry_run))
 
-    if "antigravity" in targets:
-        created.extend(_scaffold_antigravity(target, repo_root, context, ide, dry_run))
+    if "agents" in targets:
+        created.extend(_scaffold_agents_layout(target, repo_root, context, ide, dry_run))
 
     return created
 
 
-def _scaffold_cursor(
+def _scaffold_rules_layout(
     target: Path,
     repo_root: Path,
     env: Environment,
@@ -133,7 +136,7 @@ def _scaffold_cursor(
     skills_dir = target / ".cursor" / "skills"
 
     for rule_name in ide.get("rules", []):
-        template = f"cursor/rules/{rule_name}.mdc.j2"
+        template = f"rules-layout/rules/{rule_name}.mdc.j2"
         output = rules_dir / f"{rule_name}.mdc"
         content = _render_text(env, template, context)
         _write(output, content, dry_run=dry_run)
@@ -153,7 +156,7 @@ def _scaffold_cursor(
         _write(mcp_path, json.dumps({"mcpServers": servers}, indent=2) + "\n", dry_run=dry_run)
         created.append(str(mcp_path.relative_to(target)))
 
-    sandbox_src = repo_root / "templates" / "cursor" / "sandbox.json"
+    sandbox_src = repo_root / "templates" / "rules-layout" / "sandbox.json"
     sandbox_dst = target / ".cursor" / "sandbox.json"
     if sandbox_src.exists():
         if not dry_run:
@@ -164,7 +167,7 @@ def _scaffold_cursor(
     return created
 
 
-def _scaffold_antigravity(
+def _scaffold_agents_layout(
     target: Path,
     repo_root: Path,
     context: dict[str, Any],
@@ -176,7 +179,7 @@ def _scaffold_antigravity(
     skills_dir = agents_dir / "skills"
 
     env = _jinja_env(repo_root / "templates")
-    agents_md = _render_text(env, "antigravity/agents.md.j2", context)
+    agents_md = _render_text(env, "agents-layout/agents.md.j2", context)
     agents_path = agents_dir / "agents.md"
     _write(agents_path, agents_md, dry_run=dry_run)
     created.append(str(agents_path.relative_to(target)))
@@ -188,7 +191,7 @@ def _scaffold_antigravity(
             _copy_tree(src, dst, dry_run=dry_run)
             created.append(str(dst.relative_to(target)))
 
-    workflows_src = repo_root / "templates" / "antigravity" / "workflows"
+    workflows_src = repo_root / "templates" / "agents-layout" / "workflows"
     workflows_dst = agents_dir / "workflows"
     if workflows_src.exists():
         _copy_tree(workflows_src, workflows_dst, dry_run=dry_run)

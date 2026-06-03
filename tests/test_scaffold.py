@@ -4,6 +4,7 @@ import yaml
 
 from scaffold.brief import load_brief
 from scaffold.engine import build_context, scaffold_project
+from scaffold.targets import normalize_targets
 
 
 def test_load_brief_merges_profile(tmp_path: Path) -> None:
@@ -24,7 +25,7 @@ def test_load_brief_merges_profile(tmp_path: Path) -> None:
     assert "using-skills" in loaded["ide"]["skills"]
 
 
-def test_scaffold_creates_cursor_and_antigravity_files(tmp_path: Path) -> None:
+def test_scaffold_creates_both_layouts(tmp_path: Path) -> None:
     repo_root = Path(__file__).resolve().parent.parent
     brief = load_brief(repo_root / "brief.example.yaml", repo_root)
     target = tmp_path / "out"
@@ -40,3 +41,8 @@ def test_build_context_defaults() -> None:
     ctx = build_context({"project": {"name": "X"}, "stack": {}, "ide": {}, "commands": {}})
     assert ctx["project_name"] == "X"
     assert ctx["team"]["conventions"]["commit_style"]
+
+
+def test_target_aliases() -> None:
+    assert normalize_targets(["cursor", "antigravity"]) == ["rules", "agents"]
+    assert normalize_targets(["rules"]) == ["rules"]

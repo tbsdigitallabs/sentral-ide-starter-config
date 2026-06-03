@@ -15,8 +15,8 @@ stack:
 
 ide:
   targets:
-    - cursor
-    - antigravity
+    - rules
+    - agents
   mcp:
     - context7
     - github

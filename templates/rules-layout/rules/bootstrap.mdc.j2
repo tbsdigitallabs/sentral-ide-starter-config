@@ -1,0 +1,18 @@
+---
+description: Global bootstrap — load skills, MCP tools, and project context before substantive work
+alwaysApply: true
+---
+
+## Every agent session
+
+1. **Skills first:** Before coding, check whether any project skill applies (even ~1% chance). Skills live under `.cursor/skills/` and/or `.agents/skills/`. User instructions override skills.
+
+2. **Project context:** If `.agents/product-marketing-context.md` exists, read it for product/audience/positioning before marketing, copy, or UX work.
+
+3. **MCP tools:** When MCP servers are configured (see `.cursor/mcp.json` if present), read each tool schema before the first call. Prefer **context7** for library docs, **github** for repo operations, **memory** for persistent notes.
+
+4. **Announce briefly** when loading a skill or MCP path so session context stays explicit.
+
+5. **One visual skill at a time:** Follow `skills-routing` — do not stack competing UI/design skills in a single turn unless the user asks for a staged audit.
+
+6. **Verify before done:** Before claiming work is complete, run relevant tests/commands from `AGENTS.md` and confirm output.

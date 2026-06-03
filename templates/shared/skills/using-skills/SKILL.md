@@ -1,6 +1,6 @@
 ---
 name: using-skills
-description: Use when starting any session or when unsure which project skill applies. Establishes how to find and follow skills in .cursor/skills and .agents/skills before answering or coding.
+description: Use when starting any session or when unsure which project skill applies. Establishes how to find and follow skills under .cursor/skills and .agents/skills before answering or coding.
 ---
 
 # Using skills
@@ -11,10 +11,10 @@ Before substantive work, check whether any project skill applies — even ~1% ch
 
 ## How to find skills
 
-| IDE | Location |
-|-----|----------|
-| Cursor | `.cursor/skills/<skill-id>/SKILL.md` |
-| Antigravity | `.agents/skills/<skill-id>/SKILL.md` |
+| Layout | Path |
+|--------|------|
+| Rules layout | `.cursor/skills/<skill-id>/SKILL.md` |
+| Agents layout | `.agents/skills/<skill-id>/SKILL.md` |
 
 Read the skill file when triggered. User instructions override skills.
 
@@ -23,7 +23,7 @@ Read the skill file when triggered. User instructions override skills.
 1. User's explicit instructions
 2. Process skills (brainstorming, systematic-debugging)
 3. Domain skills (frontend-polish, copywriting, seo-audit)
-4. Default agent behavior
+4. Default agent behaviour
 
 ## Announce
 

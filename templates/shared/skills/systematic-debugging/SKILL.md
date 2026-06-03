@@ -1,6 +1,6 @@
 ---
 name: systematic-debugging
-description: Use when encountering bugs, test failures, or unexpected behavior. Follow root-cause investigation before proposing fixes.
+description: Use when encountering bugs, test failures, or unexpected behaviour. Follow root-cause investigation before proposing fixes.
 ---
 
 # Systematic debugging
@@ -16,7 +16,7 @@ description: Use when encountering bugs, test failures, or unexpected behavior. 
 - Check recent diffs and config changes
 - Add temporary logging only if needed; remove after fix
 
-## Phase 3 — Hypothesize
+## Phase 3 — Hypothesise
 
 - List 2–3 plausible causes ranked by likelihood
 - Test one hypothesis at a time

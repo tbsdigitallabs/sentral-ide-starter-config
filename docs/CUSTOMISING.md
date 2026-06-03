@@ -1,4 +1,4 @@
-# Customizing the starter
+# Customising the starter
 
 ## Add a profile
 
@@ -14,11 +14,11 @@ Profiles merge under the brief — brief values win.
 2. Use YAML frontmatter with `name` and a precise `description` (trigger phrase)
 3. Add `<skill-id>` to `ide.skills` in brief or profile
 
-Skills are copied to both `.cursor/skills/` and `.agents/skills/` when both IDE targets are selected.
+Skills copy to both layout directories when both targets are selected.
 
-## Add a Cursor rule
+## Add a rule file (rules layout only)
 
-1. Create `templates/cursor/rules/<rule-id>.mdc.j2` (Jinja2 template)
+1. Create `templates/rules-layout/rules/<rule-id>.mdc.j2` (Jinja2 template)
 2. Add `<rule-id>` to `ide.rules` in brief or profile
 
 Available template variables: `project_name`, `stack`, `commands`, `team`, `language`, `framework`, etc. See `scaffold/engine.py` → `build_context`.
@@ -27,6 +27,15 @@ Available template variables: `project_name`, `stack`, `commands`, `team`, `lang
 
 1. Add entry to `MCP_CATALOG` in `scaffold/engine.py`
 2. Add server id to `ide.mcp` in brief
+
+## Layout targets
+
+| Brief value | Output |
+|-------------|--------|
+| `rules` | `.cursor/rules/`, `.cursor/skills/`, `.cursor/mcp.json` |
+| `agents` | `.agents/agents.md`, `.agents/skills/`, workflows |
+
+Legacy aliases `cursor` and `antigravity` map to `rules` and `agents`.
 
 ## White-label for your consultancy
 

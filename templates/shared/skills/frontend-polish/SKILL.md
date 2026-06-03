@@ -1,6 +1,6 @@
 ---
 name: frontend-polish
-description: Use when improving UI layout, spacing, typography, color, hierarchy, or Tailwind styling. One primary visual pass — systematic polish without generic AI template aesthetics.
+description: Use when improving UI layout, spacing, typography, colour, hierarchy, or Tailwind styling. One primary visual pass — systematic polish without generic AI template aesthetics.
 ---
 
 # Frontend polish
@@ -10,7 +10,7 @@ description: Use when improving UI layout, spacing, typography, color, hierarchy
 1. Audit the screen: hierarchy, spacing rhythm, contrast, alignment
 2. Identify the top 3 issues hurting clarity or trust
 3. Fix using existing design tokens and components first
-4. Verify responsive behavior at mobile and desktop widths
+4. Verify responsive behaviour at mobile and desktop widths
 
 ## Standards
 

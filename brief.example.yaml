@@ -26,9 +26,11 @@ team:
 
 ide:
   targets:
-    - cursor
-    - antigravity
-  # Optional MCP servers to include (requires API keys in your environment)
+    - rules
+    - agents
+  # rules  -> .cursor/  (rules, skills, MCP)
+  # agents -> .agents/ (agents.md, skills, workflows)
+  # Legacy aliases: cursor, antigravity
   mcp:
     - context7
     - github

@@ -14,7 +14,7 @@ from scaffold.engine import scaffold_project
 
 app = typer.Typer(
     name="agent-ide-scaffold",
-    help="Scaffold Cursor and Antigravity skills, rules, and docs from brief.yaml",
+    help="Scaffold agent IDE skills, rules, and docs from brief.yaml",
 )
 console = Console()
 
@@ -63,7 +63,7 @@ def run(
                     f"Output directory: {target}",
                     "",
                     "Next steps:",
-                    "1. Open the target folder in Cursor or Antigravity",
+                    "1. Open the target folder in your AI-native editor",
                     "2. Read docs/AI-IDE-SETUP-CHECKLIST.md",
                     "3. Fill in .agents/product-marketing-context.md or AGENTS.md stack details",
                     "4. Add MCP API keys to your environment (see checklist)",
