@@ -1,4 +1,4 @@
-"""CLI for agent-ide-starter."""
+"""CLI for sentral-ide-starter-config."""
 
 from __future__ import annotations
 
@@ -13,7 +13,7 @@ from scaffold.brief import load_brief
 from scaffold.engine import scaffold_project
 
 app = typer.Typer(
-    name="agent-ide-scaffold",
+    name="sentral-ide-scaffold",
     help="Scaffold agent IDE skills, rules, and docs from brief.yaml",
 )
 console = Console()

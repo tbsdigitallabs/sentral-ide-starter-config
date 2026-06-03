@@ -1,7 +1,7 @@
 [project]
-name = "agent-ide-starter"
+name = "sentral-ide-starter-config"
 version = "0.1.0"
-description = "Scaffold agent IDE skills, rules, and settings from a project brief"
+description = "Sentral IDE starter — scaffold skills, rules, and settings from a project brief"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
@@ -18,7 +18,7 @@ dev = [
 ]
 
 [project.scripts]
-agent-ide-scaffold = "scaffold.cli:app"
+sentral-ide-scaffold = "scaffold.cli:app"
 
 [build-system]
 requires = ["setuptools>=75.0"]

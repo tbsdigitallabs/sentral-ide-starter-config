@@ -1,4 +1,4 @@
-# Agent IDE Starter
+# Sentral IDE Starter Config
 
 Scaffold AI agent IDE project configuration from a single brief file — skills, rules, MCP servers, and a human setup checklist.
 
@@ -17,14 +17,14 @@ Clients or teams adopting an AI-native editor who want:
 ## Quick start
 
 ```bash
-git clone https://github.com/tbsdigitallabs/agent-ide-starter.git
-cd agent-ide-starter
+git clone https://github.com/tbsdigitallabs/sentral-ide-starter-config.git
+cd sentral-ide-starter-config
 python -m venv .venv
 .venv\Scripts\activate          # Windows
 pip install -e .
 
 # In YOUR project:
-cp /path/to/agent-ide-starter/brief.example.yaml ./brief.yaml
+cp /path/to/sentral-ide-starter-config/brief.example.yaml ./brief.yaml
 # Edit brief.yaml — name, stack, layout targets, skills
 
 python -m scaffold --brief ./brief.yaml --target .

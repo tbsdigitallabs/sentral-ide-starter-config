@@ -1,6 +1,6 @@
 # Getting started
 
-This guide is for clients (or your team) setting up a project with the Agent IDE Starter for the first time.
+This guide is for clients (or your team) setting up a project with Sentral IDE Starter Config for the first time.
 
 ## What you need
 
@@ -13,8 +13,8 @@ This guide is for clients (or your team) setting up a project with the Agent IDE
 ## Step 1 — Clone the starter
 
 ```bash
-git clone https://github.com/tbsdigitallabs/agent-ide-starter.git
-cd agent-ide-starter
+git clone https://github.com/tbsdigitallabs/sentral-ide-starter-config.git
+cd sentral-ide-starter-config
 python -m venv .venv
 ```
 
@@ -39,7 +39,7 @@ pip install -e .
 In **your** project folder (not the starter repo):
 
 ```bash
-cp /path/to/agent-ide-starter/brief.example.yaml ./brief.yaml
+cp /path/to/sentral-ide-starter-config/brief.example.yaml ./brief.yaml
 ```
 
 Edit `brief.yaml`:
@@ -120,5 +120,5 @@ Consultancies forking this repo should read [`CUSTOMISING.md`](CUSTOMISING.md).
 
 ## Help
 
-- Starter issues: [github.com/tbsdigitallabs/agent-ide-starter/issues](https://github.com/tbsdigitallabs/agent-ide-starter/issues)
+- Starter issues: [github.com/tbsdigitallabs/sentral-ide-starter-config/issues](https://github.com/tbsdigitallabs/sentral-ide-starter-config/issues)
 - Editor-specific behaviour: your editor's official documentation
